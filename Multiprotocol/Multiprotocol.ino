@@ -964,6 +964,12 @@ static void protocol_init()
 						remote_callback = DM002_callback;
 						break;
 				#endif
+				#if defined(CFLIE_NRF24L01_INO)
+					case MODE_CFLIE:
+						next_callback=initCFLIE();
+						remote_callback = CFLIE_callback;
+						break;
+				#endif
 			#endif
 		}
 	}

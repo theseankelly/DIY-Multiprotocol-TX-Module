@@ -133,6 +133,7 @@
 #define Q303_NRF24L01_INO
 #define GW008_NRF24L01_INO
 #define DM002_NRF24L01_INO
+#define CFLIE_NRF24L01_INO
 
 /**************************/
 /*** TELEMETRY SETTINGS ***/
@@ -358,6 +359,8 @@ const PPM_Parameters PPM_prot[15]=	{
 	MODE_GW008
 		NONE
 	MODE_DM002
+		NONE
+	MODE_CFLIE
 		NONE
 */
 
