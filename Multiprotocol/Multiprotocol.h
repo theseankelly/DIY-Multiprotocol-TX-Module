@@ -59,7 +59,7 @@ enum PROTOCOLS
 	MODE_Q303		= 31,	// =>NRF24L01
 	MODE_GW008		= 32,	// =>NRF24L01
 	MODE_DM002		= 33,	// =>NRF24L01
-	MODE_CFLIE		= 34,	// =>NRF24L01
+  MODE_CFLIE    = 34, // =>NRF24L01
 };
 
 enum Flysky

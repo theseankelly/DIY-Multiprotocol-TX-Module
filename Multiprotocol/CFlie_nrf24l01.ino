@@ -29,17 +29,17 @@ static void __attribute__((unused)) CFLIE_init(uint8_t bind)
     NRF24L01_WriteReg(NRF24L01_00_CONFIG, _BV(NRF24L01_00_EN_CRC) | _BV(NRF24L01_00_CRCO) | _BV(NRF24L01_00_PWR_UP)); 
     NRF24L01_WriteReg(NRF24L01_01_EN_AA, 0x01);              // Auto Acknowledgement for data pipe 0
     NRF24L01_WriteReg(NRF24L01_02_EN_RXADDR, 0x01);          // Enable data pipe 0
-    NRF24L01_WriteReg(NRF24L01_03_SETUP_AW, TX_ADDR_SIZE-2); // 5-byte RX/TX address
+    NRF24L01_WriteReg(NRF24L01_03_SETUP_AW, 3);              // 5-byte RX/TX address
     NRF24L01_WriteReg(NRF24L01_04_SETUP_RETR, 0x13);         // 3 retransmits, 500us delay
 
-    NRF24L01_WriteReg(NRF24L01_05_RF_CH, 80);                // Hard coded to channel 80
+    NRF24L01_WriteReg(NRF24L01_05_RF_CH, 2);                 // Hard coded to channel 2
     NRF24L01_SetBitrate(NRF24L01_BR_2M);                     // Hard coded to 2M
 
     NRF24L01_SetPower();
     NRF24L01_WriteReg(NRF24L01_07_STATUS, 0x70);             // Clear data ready, data sent, and retransmit
 
-    NRF24L01_WriteRegisterMulti(NRF24L01_0A_RX_ADDR_P0, rx_tx_addr, TX_ADDR_SIZE);
-    NRF24L01_WriteRegisterMulti(NRF24L01_10_TX_ADDR, rx_tx_addr, TX_ADDR_SIZE);
+    NRF24L01_WriteRegisterMulti(NRF24L01_0A_RX_ADDR_P0, rx_tx_addr, 5);
+    NRF24L01_WriteRegisterMulti(NRF24L01_10_TX_ADDR, rx_tx_addr, 5);
 
     // this sequence necessary for module from stock tx
     NRF24L01_ReadReg(NRF24L01_1D_FEATURE);
@@ -83,7 +83,7 @@ static void __attribute__((unused)) CFLIE_send_packet()
     packet[1] = 0x03; // CRTP CPPM Emulation packet type
     memcpy(&packet[2], (uint8_t*)&cpkt, sizeof(cpkt));
 
-    NRF24L01_Writereg(NRF24L01_07_STATUS, (_BV(NRF24L01_07_TX_DS) | _BV(NRF24L01_07_MAX_RT)));
+    NRF24L01_WriteReg(NRF24L01_07_STATUS, (_BV(NRF24L01_07_TX_DS) | _BV(NRF24L01_07_MAX_RT)));
     NRF24L01_FlushTx();
     NRF24L01_FlushRx();
 

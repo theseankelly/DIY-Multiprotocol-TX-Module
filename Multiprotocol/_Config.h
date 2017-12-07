@@ -96,9 +96,9 @@
 //Comment the protocols you are not using with "//" to save Flash space.
 
 //The protocols below need an A7105 to be installed
-#define	FLYSKY_A7105_INO
-#define	HUBSAN_A7105_INO
-#define	AFHDS2A_A7105_INO
+//#define	FLYSKY_A7105_INO
+//#define	HUBSAN_A7105_INO
+//#define	AFHDS2A_A7105_INO
 
 //The protocols below need a CYRF6936 to be installed
 #define	DEVO_CYRF6936_INO
@@ -113,13 +113,13 @@
 #define	SFHSS_CC2500_INO
 
 //The protocols below need a NRF24L01 to be installed
-#define	BAYANG_NRF24L01_INO
-#define	CG023_NRF24L01_INO
-#define	CX10_NRF24L01_INO		// Include Q2X2 protocol
-#define	ESKY_NRF24L01_INO
-#define	HISKY_NRF24L01_INO
-#define	KN_NRF24L01_INO
-#define	SLT_NRF24L01_INO
+//#define	BAYANG_NRF24L01_INO
+//#define	CG023_NRF24L01_INO
+//#define	CX10_NRF24L01_INO		// Include Q2X2 protocol
+//#define	ESKY_NRF24L01_INO
+//#define	HISKY_NRF24L01_INO
+//#define	KN_NRF24L01_INO
+//#define	SLT_NRF24L01_INO
 #define	SYMAX_NRF24L01_INO
 #define	V2X2_NRF24L01_INO
 #define	YD717_NRF24L01_INO
